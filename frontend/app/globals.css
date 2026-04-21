@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body {
+  background: theme("colors.cream.DEFAULT");
+  color: theme("colors.plum.ink");
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/60 border border-white/75;
+  }
+  .label {
+    @apply inline-flex items-center gap-2.5 text-xs font-semibold
+           uppercase tracking-widest text-blush-500;
+  }
+  .label::before {
+    content: "";
+    @apply block w-6 h-px bg-blush-500;
+  }
+}
+
+::selection { background: theme("colors.magenta"); color: theme("colors.cream.DEFAULT"); }
+
+/* Fraunces italic swashes for display text */
+.serif-display em { font-style: italic; font-weight: 300; }
